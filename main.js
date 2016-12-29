@@ -39,7 +39,7 @@ for (var i = 0; i < allStageNumber; i++) {
   Difficulty[1].enemySpeed = 7;
   //ステージ3
   Difficulty[2].clearNumber = 7;
-  Difficulty[2].appearLevel = 10;
+  Difficulty[2].appearLevel = 12;
   Difficulty[2].enemySpeed = 10;
 
 window.onload = function() {
@@ -167,7 +167,6 @@ window.onload = function() {
           //時間切れかどうか判定
           timeUpIf(time);
           //アイテムをゲットできたかどうか判定
-          console.log("flag1:"+ flag);
           if (hitItemIf(items, items[count], bear, count, clearNumber, stageNumber, flag)) {
             //次のアイテムが出現するまでアイテムゲット判定をおこなわない
             flag = false;
@@ -220,7 +219,6 @@ window.onload = function() {
         //アイテムとの衝突判定をおこなう関数
         function hitItemIf(items, item, obj, count, clearNumber, stageNumber, flag) {
           //次のアイテムが表示されてから判定する
-          console.log("flag:"+ flag);
           if (flag == true) {
             //ステージクリア条件の個数をゲットしたとき
             if (item.intersect(obj) && count >= (clearNumber - 1)) {
